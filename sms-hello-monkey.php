@@ -62,7 +62,7 @@ function googleMagic($origin, $destination) {
 }
 
 function getPathMsg() {
-    $pathJSON = googleMagic;
+    $pathJSON = googleMagic();
     echo $pathJSON;
 }
 
