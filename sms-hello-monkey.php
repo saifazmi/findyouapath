@@ -43,7 +43,8 @@ function googleMagic($origin, $destination) {
 function findYouAPath() {
     /* Get the path data */
     $findyouapath = getPathData();
-    
+    $findyouapath = json_decode($findyouapath, true);
+    $findyouapath = findyouapath["findpath"];
     return $findyouapath;
 }
  
