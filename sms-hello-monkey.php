@@ -24,9 +24,9 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 <Response>
     <Message>    
     <?php 
-        echo $pathquery[0]
-        echo $pathquery[1]
-        echo $pathquery[3]
+        echo $pathquery[0];
+        echo $pathquery[1];
+        echo $pathquery[2];
     ?>        
     </Message>
 </Response>
