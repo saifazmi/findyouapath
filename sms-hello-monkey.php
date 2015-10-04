@@ -56,7 +56,7 @@ function printPathMsg($pathJSON) {
     for($i = 0; $i < count($steps); $i++) {
         
         $step = $steps[$i]["html_instructions"];
-        $step = strip_tags($step);
+        //$step = strip_tags($step);
         echo "\n$step\n";
     }
 }
