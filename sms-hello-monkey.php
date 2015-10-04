@@ -29,11 +29,22 @@ function getPathData() {
     return $pathdata;
 }
 
-function findPath() {
-    /*  Google path api example 
-        https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=AIzaSyAVnFbRJ8vu79913sZlOeacRJn9bNEXpoQ
-    */
+function googleMagic($origin, $destination) {
+    /* Google Directions API */
+    $apiCallURL = "https://maps.googleapis.com/maps/api/directions/json?";
+    $apiCallURL .= "origin=".urlencode($origin);
+    $apiCallURL .= "&destination=".urlencode($destination);
+    $apiCallURL .= "&region=uk";
+    $aptCallURL .= "&key=AIzaSyAVnFbRJ8vu79913sZlOeacRJn9bNEXpoQ";
     
+    return $aptCallURL;
+}
+
+function findYouAPath() {
+    /* Get the path data */
+    $findyouapath = getPathData();
+    
+    return $findyouapath;
 }
  
 header("content-type: text/xml");
@@ -41,9 +52,9 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 
 <Response>
-    <Message>    
-    <?php
-        echo strval(getPathData());
-    ?>        
+    <Message>
+        <?php
+            echo strval(findYouAPath());
+        ?>
     </Message>
 </Response>
