@@ -29,6 +29,15 @@ function getPathData() {
     return $pathdata;
 }
 
+function findYouAPath() {
+    /* Get the path data */
+    $findyouapath = getPathData();
+    echo $findyouapath;
+    $findyouapath = json_decode($findyouapath, true);
+    $findyouapath = findyouapath["findpath"];
+    echo $findyouapath;
+}
+
 header("content-type: text/xml");
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"; 
 ?>
@@ -36,7 +45,8 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 <Response>
     <Message>
         <?php
-            echo strval(getPathData());
+            //echo strval(getPathData());
+            echo findYouAPath();
         ?>
     </Message>
 </Response>
