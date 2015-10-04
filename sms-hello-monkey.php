@@ -61,6 +61,10 @@ function googleMagic($origin, $destination) {
     return file_get_contents($apiCallURL);
 }
 
+function getPathMsg() {
+    $pathJSON = googleMagic;
+    echo $pathJSON;
+}
 
 function findYouAPath() {
     /* Get the path data */
@@ -76,7 +80,8 @@ function findYouAPath() {
     echo "\n";
     echo $destination;
     */
-    echo googleMagic($origin, $destination);
+    googleMagic($origin, $destination);
+    getPathMsg();
 }
 
 header("content-type: text/xml");
