@@ -21,8 +21,8 @@ function getPathData() {
     
     /* Creating a JSON object of path data */
     $pathdata = array(
-        "from" => str_replace(" ","+",$pathquery[0],
-        "to" => str_replace(" ","+",$pathquery[1]
+        "from" => str_replace(" ","+",$pathquery[0]),
+        "to" => str_replace(" ","+",$pathquery[1])
     );
     $pathdata = json_encode(array("findpath" => $pathdata),  JSON_PRETTY_PRINT | JSON_FORCE_OBJECT);
     
