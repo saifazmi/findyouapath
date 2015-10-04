@@ -17,11 +17,11 @@ $pathquery = strtolower($body);
 $pathquery = explode(" to ", $pathquery);
 
 $pathdata = array(
-    'from' => $pathquery[0],
-    'to' => $pathquery[1]
+    "from" => $pathquery[0],
+    "to" => $pathquery[1]
 );
 
-$pathdata = json_encode(array('path' => $pathdata),  JSON_PRETTY_PRINT | JSON_FORCE_OBJECT);
+$pathdata = json_encode(array("findpath" => $pathdata),  JSON_PRETTY_PRINT | JSON_FORCE_OBJECT);
  
 header("content-type: text/xml");
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"; 
