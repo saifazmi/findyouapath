@@ -9,24 +9,21 @@ include('Services/Twilio.php');
 function getPathData() {
     /* Read the contents of the 'Body' field of the Request. */
     $body = $_REQUEST["Body"];
-    $city = $_REQUEST["FromCity"];
-    $state = $_REQUEST["FromState"];
-    $zip = $_REQUEST["FromZip"];
-    $country = $_REQUEST["FromCountry"];
-    $from = $_REQUEST["From"];
     
     /*
     $city = "Birmingham";
     $state = "West Midlands";
     $zip = "B297AE";
-    $country = "UK";
-    */
+    $country = "UK"
+    
     echo $body;
     echo $city;
     echo $state;
     echo $zip;
     echo $country;
     echo $from;
+    */
+    
     /* Remove formatting from $body until it is just lowercase 
     characters without punctuation or spaces. */
     $body = preg_replace("/[^A-Za-z0-9]/u", " ", $body);
@@ -51,8 +48,8 @@ function googleMagic($origin, $destination) {
     $apiCallURL = "https://maps.googleapis.com/maps/api/directions/json?";
     //$apiCallURL .= "origin=".urlencode($origin);
     //$apiCallURL .= "&destination=".urlencode($destination);
-    $apiCallURL .= "origin=26+dawlish+road";
-    $apiCallURL .= "&destination=bull+ring";
+    $apiCallURL .= "origin=26+dawlish+road,birmingham";
+    $apiCallURL .= "&destination=bull+ring,birmingham";
     $apiCallURL .= "&region=uk";
     $apiCallURL .= "&key=AIzaSyAVnFbRJ8vu79913sZlOeacRJn9bNEXpoQ";
     
@@ -84,9 +81,9 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 <Response>
     <Message>
         <?php
-            getPathData();
+            //getPathData();
             //echo strval(getPathData());
-            //findYouAPath();
+            findYouAPath();
         ?>
     </Message>
 </Response>
