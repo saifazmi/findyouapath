@@ -37,7 +37,7 @@ function googleMagic($origin, $destination) {
     $apiCallURL .= "&region=uk";
     $apiCallURL .= "&key=AIzaSyAVnFbRJ8vu79913sZlOeacRJn9bNEXpoQ";
     
-    return $apiCallURL;
+    return file_get_contents($apiCallURL);
 }
 
 
