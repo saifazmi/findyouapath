@@ -14,11 +14,17 @@ characters without punctuation or spaces. */
 $body = preg_replace("/[^A-Za-z0-9]/u", " ", $body);
 $body = trim($body);
 $pathquery = strtolower($body);
+$pathquery = explode("to", $pathquery);
+
 
 header("content-type: text/xml");
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"; 
 ?>
 
 <Response>
-    <Message><?php echo $pathquery ?></Message>
+    <Message>    
+    <?php 
+        echo count($pathquery)
+    ?>        
+    </Message>
 </Response>
