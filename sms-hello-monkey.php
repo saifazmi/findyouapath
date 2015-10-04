@@ -34,7 +34,7 @@ function findYouAPath() {
     $findyouapath = getPathData();
     $findyouapath = json_decode($findyouapath, true);
     $findyouapath = $findyouapath["findpath"];
-    echo strval $findyoupath;
+    echo strval $findyouapath;
 }
 
 header("content-type: text/xml");
