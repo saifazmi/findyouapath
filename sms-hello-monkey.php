@@ -48,7 +48,7 @@ function googleMagic($origin, $destination) {
     $apiCallURL = "https://maps.googleapis.com/maps/api/directions/json?";
     //$apiCallURL .= "origin=".urlencode($origin);
     //$apiCallURL .= "&destination=".urlencode($destination);
-    $apiCallURL .= "origin=26+dawlish+road,birmingham";
+    $apiCallURL .= "origin=26+dawlish+road+birmingham";
     $apiCallURL .= "&destination=bull+ring,birmingham";
     $apiCallURL .= "&region=uk";
     $apiCallURL .= "&key=AIzaSyAVnFbRJ8vu79913sZlOeacRJn9bNEXpoQ";
