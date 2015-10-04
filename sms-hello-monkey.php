@@ -23,6 +23,12 @@ $pathdata = array(
 
 $pathdata = json_encode(array('path' => $pathdata), JSON_FORCE_OBJECT);
 
+$json_output = json_decode($pathdata, true);        
+        foreach ($json_output as $trend)
+        {         
+            echo "{$trend->text}\n"; 
+        } 
+
 header("content-type: text/xml");
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"; 
 ?>
