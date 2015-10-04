@@ -65,12 +65,17 @@ function googleMagic($origin, $destination) {
 function getPathMsg() {
     $pathJSON = googleMagic();
     echo $pathJSON;
-    /*$pathJSON = json_decode($pathJSON);
-    $route = pathJSON["routes"];
-    echo strval(route);*/
-    /*for($i = 0; $i < count(routes["legs"]; $i++) {
-        $distance = routes[]
-    }*/
+    $pathJSON = json_decode($pathJSON, true);
+    $routes = $pathJSON["routes"];
+    $legs = $routes[0]["legs"];
+    
+    $distance = $legs[0]["distance"]["text"];
+    $duration = $legs[0]["duration"]["text"];
+    
+    echo "\n\n\n";
+    echo distance;
+    echo "\n";
+    echo duration;
 }
 
 function findYouAPath() {
