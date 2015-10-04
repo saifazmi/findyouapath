@@ -32,8 +32,10 @@ function getPathData() {
 function googleMagic($origin, $destination) {
     /* Google Directions API */
     $apiCallURL = "https://maps.googleapis.com/maps/api/directions/json?";
-    $apiCallURL .= "origin=".urlencode($origin);
-    $apiCallURL .= "&destination=".urlencode($destination);
+    //$apiCallURL .= "origin=".urlencode($origin);
+    //$apiCallURL .= "&destination=".urlencode($destination);
+    $apiCallURL .= "origin=26+dawlish+road";
+    $apiCallURL .= "&destination=bull+ring";
     $apiCallURL .= "&region=uk";
     $apiCallURL .= "&key=AIzaSyAVnFbRJ8vu79913sZlOeacRJn9bNEXpoQ";
     
