@@ -21,7 +21,7 @@ $pathdata = array(
     'to' => $pathquery[1]
 );
 
-$pathdata = json_encode(array('path' => $pathdata), JSON_FORCE_OBJECT);
+$pathdata = json_encode(array('path' => $pathdata), JSON_FORCE_OBJECT | JSON_PRETTY_PRINT);
  
 header("content-type: text/xml");
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"; 
