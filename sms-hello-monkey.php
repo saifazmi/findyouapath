@@ -77,10 +77,10 @@ function findYouAPath() {
     $destination = $findyouapath["to"];
     
     
-    echo $origin;
+    /*echo $origin;
     echo "\n";
     echo $destination;
-    
+    */
     printPathMsg(googleMagic($origin, $destination));
 }
 
