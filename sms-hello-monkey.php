@@ -63,6 +63,7 @@ function googleMagic($origin, $destination) {
 
 function getPathMsg() {
     $pathJSON = googleMagic();
+    echo $pathJSON;
     $pathJSON = json_decode($pathJSON);
     $route = pathJSON["routes"];
     echo strval(route);
