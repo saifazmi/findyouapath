@@ -32,7 +32,6 @@ function getPathData() {
     
     /* Spliting the query in FROM and TO */
     $pathquery = explode(" to ", $pathquery);
-    
     /* Creating a JSON object of path data */
     $pathdata = array(
         "from" => str_replace(" ","+",$pathquery[0]),
@@ -49,11 +48,11 @@ function googleMagic($origin, $destination) {
     //$apiCallURL .= "origin=".urlencode($origin);
     //$apiCallURL .= "&destination=".urlencode($destination);
     
-    //$apiCallURL .= "origin=26+dawlish+road+birmingham";
-    //$apiCallURL .= "&destination=bull+ring,birmingham";
+    $apiCallURL .= "origin=26+dawlish+road+BHX";
+    $apiCallURL .= "&destination=bull+ring,BHX";
     
-    $apiCallURL .= "origin=B297AE";
-    $apiCallURL .= "&destination=B152QX";
+    //$apiCallURL .= "origin=B297AE";
+    //$apiCallURL .= "&destination=B152QX";
     
     $apiCallURL .= "&mode=walking";
     $apiCallURL .= "&region=uk";
