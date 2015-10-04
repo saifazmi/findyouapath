@@ -31,7 +31,8 @@ function getPathData() {
 
 function findYouAPath() {
     /* Get the path data */
-    echo strval(getPathData());
+    $findyouapath = getPathData();
+    echo $findyouapath;
 }
 
 header("content-type: text/xml");
