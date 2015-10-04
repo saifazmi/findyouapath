@@ -39,7 +39,7 @@ function googleMagic($origin, $destination) {
 }
 
 function printPathMsg($pathJSON) {
-
+    echo $pathJSON;
     $pathJSON = json_decode($pathJSON, true);
     $routes = $pathJSON["routes"];
     $legs = $routes[0]["legs"];
@@ -57,7 +57,7 @@ function printPathMsg($pathJSON) {
         
         $step = $steps[$i]["html_instructions"];
         //$step = strip_tags($step);
-        echo "\n$step\n";
+        //echo "\n$step\n";
     }
 }
 
