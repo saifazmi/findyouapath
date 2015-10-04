@@ -55,6 +55,9 @@ function printPathMsg($pathJSON) {
         
         $step = $steps[$i]["html_instructions"];
         $step = strip_tags($step);
+        if (strpos($step, "Destination") !== false) {
+            substr_replace("Destination", "\nDestination", strpos($step, "Destination"));
+        }
         echo "\n$step\n";
     }
 }
