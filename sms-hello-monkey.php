@@ -21,8 +21,8 @@ function getPathData() {
     
     /* Creating a JSON object of path data */
     $pathdata = array(
-        "from" => $pathquery[0],
-        "to" => $pathquery[1]
+        "from" => str_replace(" ","+",$pathquery[0],
+        "to" => str_replace(" ","+",$pathquery[1]
     );
     $pathdata = json_encode(array("findpath" => $pathdata),  JSON_PRETTY_PRINT | JSON_FORCE_OBJECT);
     
@@ -47,10 +47,10 @@ function findYouAPath() {
     $findyouapath = json_decode($findyouapath, true);
     $findyouapath = $findyouapath["findpath"];
     
-    $origin = $findyouapath[from];
-    $destination = $findyouapath[to];
+    echo $origin = $findyouapath[from];
+    echo $destination = $findyouapath[to];
     
-    echo strval(googleMagic($origin, $destination));
+    //echo googleMagic($origin, $destination);
 }
 
 header("content-type: text/xml");
