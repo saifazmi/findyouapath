@@ -27,10 +27,8 @@ function getPathData() {
 function googleMagic($origin, $destination) {
     /* Google Directions API */
     $apiCallURL = "https://maps.googleapis.com/maps/api/directions/json?";
-    //$apiCallURL .= "origin=".urlencode($origin);
-    //$apiCallURL .= "&destination=".urlencode($destination);
-    $apiCallURL .= "origin=26+dawlish+road+birmingham";
-    $apiCallURL .= "&destination=university+of+birmingham";
+    $apiCallURL .= "origin=".urlencode($origin);
+    $apiCallURL .= "&destination=".urlencode($destination);
     $apiCallURL .= "&mode=walking";
     $apiCallURL .= "&region=uk";
     $apiCallURL .= "&key=AIzaSyAVnFbRJ8vu79913sZlOeacRJn9bNEXpoQ";
@@ -39,7 +37,7 @@ function googleMagic($origin, $destination) {
 }
 
 function printPathMsg($pathJSON) {
-    echo $pathJSON;
+
     $pathJSON = json_decode($pathJSON, true);
     $routes = $pathJSON["routes"];
     $legs = $routes[0]["legs"];
@@ -56,8 +54,8 @@ function printPathMsg($pathJSON) {
     for($i = 0; $i < count($steps); $i++) {
         
         $step = $steps[$i]["html_instructions"];
-        //$step = strip_tags($step);
-        //echo "\n$step\n";
+        $step = strip_tags($step);
+        echo "\n$step\n";
     }
 }
 
