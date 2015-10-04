@@ -28,27 +28,7 @@ function getPathData() {
     
     return $pathdata;
 }
-/*
-function googleMagic($origin, $destination) {
-    /* Google Directions API */
-    $apiCallURL = "https://maps.googleapis.com/maps/api/directions/json?";
-    $apiCallURL .= "origin=".urlencode($origin);
-    $apiCallURL .= "&destination=".urlencode($destination);
-    $apiCallURL .= "&region=uk";
-    $aptCallURL .= "&key=AIzaSyAVnFbRJ8vu79913sZlOeacRJn9bNEXpoQ";
-    
-    return $aptCallURL;
-}
 
-function findYouAPath() {
-    /* Get the path data */
-    $findyouapath = getPathData();
-    $findyouapath = json_decode($findyouapath, true);
-    $findyouapath = findyouapath["findpath"];
-    echo $findyouapath;
-}
-*/
-    
 header("content-type: text/xml");
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"; 
 ?>
