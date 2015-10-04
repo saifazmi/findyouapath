@@ -46,7 +46,7 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     <Message>
         <?php
             //echo strval(getPathData());
-            echo findYouAPath();
+            findYouAPath();
         ?>
     </Message>
 </Response>
