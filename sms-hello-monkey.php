@@ -51,6 +51,7 @@ function findYouAPath() {
     $destination = $findyouapath[to];
     
     echo $origin;
+    echo "\n";
     echo $destination;
     //echo googleMagic($origin, $destination);
 }
