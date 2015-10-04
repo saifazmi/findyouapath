@@ -40,7 +40,7 @@ function getPathData() {
     );
     $pathdata = json_encode(array("findpath" => $pathdata),  JSON_PRETTY_PRINT | JSON_FORCE_OBJECT);
     
-    //return $pathdata;
+    return $pathdata;
 }
 
 function googleMagic($origin, $destination) {
@@ -95,8 +95,8 @@ function findYouAPath() {
     $findyouapath = json_decode($findyouapath, true);
     $findyouapath = $findyouapath["findpath"];
     
-    $origin = $findyouapath[from];
-    $destination = $findyouapath[to];
+    $origin = $findyouapath["from"];
+    $destination = $findyouapath["to"];
     
     /*
     echo $origin;
