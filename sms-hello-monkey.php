@@ -65,7 +65,7 @@ function getPathMsg() {
     $pathJSON = googleMagic();
     $pathJSON = json_decode($pathJSON);
     $routeLegs = pathJSON["routes"][0]["legs"];
-    echo $routeLegs;
+    echo strval($routeLegs);
     /*for($i = 0; $i < count(routes["legs"]; $i++) {
         $distance = routes[]
     }*/
