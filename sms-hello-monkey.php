@@ -28,7 +28,7 @@ function getPathData() {
     
     return $pathdata;
 }
-
+/*
 function googleMagic($origin, $destination) {
     /* Google Directions API */
     $apiCallURL = "https://maps.googleapis.com/maps/api/directions/json?";
@@ -47,7 +47,8 @@ function findYouAPath() {
     $findyouapath = findyouapath["findpath"];
     echo $findyouapath;
 }
- 
+*/
+    
 header("content-type: text/xml");
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"; 
 ?>
