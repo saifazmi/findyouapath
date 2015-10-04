@@ -64,7 +64,7 @@ function googleMagic($origin, $destination) {
 
 function getPathMsg() {
     $pathJSON = googleMagic();
-    echo $pathJSON;
+    //echo $pathJSON;
     $pathJSON = json_decode($pathJSON, true);
     $routes = $pathJSON["routes"];
     $legs = $routes[0]["legs"];
@@ -73,10 +73,15 @@ function getPathMsg() {
     $duration = $legs[0]["duration"]["text"];
     
     echo "Distance: $distance";
-    echo "\n";
-    echo "Time: $duration";
+    echo "\nTime: $duration";
     
-    // $setps = $legs[0]["steps"];
+    $steps = legs[0]["steps"];
+    
+    for($i = 0; $i < count(steps); $i++) {
+        $step = steps[$i]["html_instructions"];
+        $step = preg_replace("/[\x00-\x1F\x80-\xFF]/", "", $step);
+        echo "\n$step";
+    }
     
     /*
     for removing all the unicode in html instructions
@@ -89,8 +94,8 @@ function findYouAPath() {
     $findyouapath = json_decode($findyouapath, true);
     $findyouapath = $findyouapath["findpath"];
     
-    $origin = $findyouapath[from];
-    $destination = $findyouapath[to];
+    $origin = $findyouapath["from"];
+    $destination = $findyouapath["to"];
     
     /*
     echo $origin;
