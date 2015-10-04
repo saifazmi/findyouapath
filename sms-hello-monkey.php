@@ -117,8 +117,8 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 <Response>
     <Message>
         <?php
-            getPathData();
-            //echo strval(getPathData());
+            //getPathData();
+            echo strval(getPathData());
             //findYouAPath();
         ?>
     </Message>
