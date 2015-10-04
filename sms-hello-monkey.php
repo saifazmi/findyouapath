@@ -40,7 +40,7 @@ function getPathData() {
     );
     $pathdata = json_encode(array("findpath" => $pathdata),  JSON_PRETTY_PRINT | JSON_FORCE_OBJECT);
     
-    return $pathdata;
+    // return $pathdata;
 }
 
 function googleMagic($origin, $destination) {
@@ -75,7 +75,7 @@ function getPathMsg() {
     echo "Distance: $distance";
     echo "\nTime: $duration";
     
-    $steps = legs[0]["steps"];
+    //$steps = legs[0]["steps"];
     
     /*
     for($i = 0; $i < count(steps); $i++) {
