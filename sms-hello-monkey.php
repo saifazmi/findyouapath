@@ -35,9 +35,9 @@ function googleMagic($origin, $destination) {
     $apiCallURL .= "origin=".urlencode($origin);
     $apiCallURL .= "&destination=".urlencode($destination);
     $apiCallURL .= "&region=uk";
-    $aptCallURL .= "&key=AIzaSyAVnFbRJ8vu79913sZlOeacRJn9bNEXpoQ";
+    $apiCallURL .= "&key=AIzaSyAVnFbRJ8vu79913sZlOeacRJn9bNEXpoQ";
     
-    return $aptCallURL;
+    return $apiCallURL;
 }
 
 
