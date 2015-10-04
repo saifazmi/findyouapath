@@ -40,7 +40,7 @@ function getPathData() {
     );
     $pathdata = json_encode(array("findpath" => $pathdata),  JSON_PRETTY_PRINT | JSON_FORCE_OBJECT);
     
-    // return $pathdata;
+    return $pathdata;
 }
 
 function googleMagic($origin, $destination) {
