@@ -82,7 +82,9 @@ function getPathMsg() {
         
         $step = $steps[$i]["html_instructions"];
         //echo "\n$step\n";
-        $step = preg_replace("/[\x00-\x1F\x80-\xFF]/", " ", $step);
+        /* remove all unicode tags and extra spaces */
+        $step = preg_replace("/[\u00]/", " ", $step);
+        $step = trim($step);
         echo "\n$step\n";
     }
     
