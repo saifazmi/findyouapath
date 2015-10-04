@@ -64,7 +64,7 @@ function googleMagic($origin, $destination) {
 
 function getPathMsg() {
     $pathJSON = googleMagic();
-    //echo $pathJSON;
+    echo $pathJSON;
     $pathJSON = json_decode($pathJSON, true);
     $routes = $pathJSON["routes"];
     $legs = $routes[0]["legs"];
@@ -80,7 +80,7 @@ function getPathMsg() {
     for($i = 0; $i < count(steps); $i++) {
         $step = steps[$i]["html_instructions"];
         $step = preg_replace("/[\x00-\x1F\x80-\xFF]/", "", $step);
-        echo "\n$step";
+        echo "\n$step\n";
     }
     
     /*
