@@ -72,12 +72,11 @@ function getPathMsg() {
     $distance = $legs[0]["distance"]["text"];
     $duration = $legs[0]["duration"]["text"];
     
-    echo "\n\n\n";
-    echo "Distance: " + $distance;
+    echo "Distance: $distance";
     echo "\n";
-    echo "Time: " + $duration;
+    echo "Time: $duration";
     
-    $setps = $legs[0]["steps"];
+    // $setps = $legs[0]["steps"];
     
     /*
     for removing all the unicode in html instructions
