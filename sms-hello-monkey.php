@@ -31,11 +31,7 @@ function getPathData() {
 
 function findYouAPath() {
     /* Get the path data */
-    $findyouapath = getPathData();
-    echo $findyouapath;
-    $findyouapath = json_decode($findyouapath, true);
-    $findyouapath = findyouapath["findpath"];
-    echo $findyouapath;
+    echo strval(getPathData());
 }
 
 header("content-type: text/xml");
