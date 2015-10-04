@@ -81,9 +81,9 @@ function getPathMsg() {
     for($i = 0; $i < count($steps); $i++) {
         
         echo "fuck this shit :)";
-        /*$step = $steps[$i]["html_instructions"];
+        $step = $steps[$i]["html_instructions"];
         $step = preg_replace("/[\x00-\x1F\x80-\xFF]/", "", $step);
-        echo "\n$step\n";*/
+        echo "\n$step\n";
     }
     
     /*
