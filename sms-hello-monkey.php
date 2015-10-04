@@ -8,11 +8,16 @@ include('Services/Twilio.php');
 
 function getPathData() {
     /* Read the contents of the 'Body' field of the Request. */
-    $body = $_REQUEST["Body"];
+   /* $body = $_REQUEST["Body"];
     $city = $_REQUEST["FromCity"];
     $state = $_REQUEST["FromState"];
     $zip = $REQUEST["FromZip"];
     $country = $REQUEST["FromCountry"];
+    */
+    $city = "Birmingham";
+    $state = "West Midlands";
+    $zip = "B297AE";
+    $country = "UK";
     
     echo $city;
     echo $state;
