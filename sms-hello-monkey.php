@@ -101,13 +101,13 @@ function findYouAPath() {
     $origin = $findyouapath["from"];
     $destination = $findyouapath["to"];
     
-    /*
+    
     echo $origin;
     echo "\n";
     echo $destination;
-    */
-    googleMagic($origin, $destination);
-    getPathMsg();
+    
+    //googleMagic($origin, $destination);
+    //getPathMsg();
 }
 
 header("content-type: text/xml");
@@ -118,8 +118,8 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     <Message>
         <?php
             //getPathData();
-            echo strval(getPathData());
-            //findYouAPath();
+            //echo strval(getPathData());
+            findYouAPath();
         ?>
     </Message>
 </Response>
