@@ -29,13 +29,6 @@ function googleMagic($origin, $destination) {
     $apiCallURL = "https://maps.googleapis.com/maps/api/directions/json?";
     $apiCallURL .= "origin=".urlencode($origin);
     $apiCallURL .= "&destination=".urlencode($destination);
-    
-    //$apiCallURL .= "origin=26+dawlish+road+BHX";
-    //$apiCallURL .= "&destination=bull+ring,BHX";
-    
-    //$apiCallURL .= "origin=B297AE";
-    //$apiCallURL .= "&destination=B152QX";
-    
     $apiCallURL .= "&mode=walking";
     $apiCallURL .= "&region=uk";
     $apiCallURL .= "&key=AIzaSyAVnFbRJ8vu79913sZlOeacRJn9bNEXpoQ";
@@ -44,8 +37,7 @@ function googleMagic($origin, $destination) {
 }
 
 function printPathMsg($pathJSON) {
-    //$pathJSON = googleMagic();
-    //echo $pathJSON;
+
     $pathJSON = json_decode($pathJSON, true);
     $routes = $pathJSON["routes"];
     $legs = $routes[0]["legs"];
@@ -76,11 +68,6 @@ function findYouAPath() {
     $origin = $findyouapath["from"];
     $destination = $findyouapath["to"];
     
-    
-    /*echo $origin;
-    echo "\n";
-    echo $destination;
-    */
     printPathMsg(googleMagic($origin, $destination));
 }
 
@@ -91,8 +78,6 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 <Response>
     <Message>
         <?php
-            //getPathData();
-            //echo strval(getPathData());
             findYouAPath();
         ?>
     </Message>
