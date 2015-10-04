@@ -95,8 +95,8 @@ function findYouAPath() {
     $findyouapath = json_decode($findyouapath, true);
     $findyouapath = $findyouapath["findpath"];
     
-    $origin = $findyouapath["from"];
-    $destination = $findyouapath["to"];
+    $origin = $findyouapath[from];
+    $destination = $findyouapath[to];
     
     /*
     echo $origin;
