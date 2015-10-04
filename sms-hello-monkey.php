@@ -27,10 +27,10 @@ function getPathData() {
 function googleMagic($origin, $destination) {
     /* Google Directions API */
     $apiCallURL = "https://maps.googleapis.com/maps/api/directions/json?";
-    //$apiCallURL .= "origin=".urlencode($origin);
-    //$apiCallURL .= "&destination=".urlencode($destination);
-    $apiCallURL .= "origin=B297AE";
-    $apiCallURL .= "&destination=B152QX";
+    $apiCallURL .= "origin=".urlencode($origin);
+    $apiCallURL .= "&destination=".urlencode($destination);
+    //$apiCallURL .= "origin=B297AE";
+    //$apiCallURL .= "&destination=B152QX";
     $apiCallURL .= "&mode=walking";
     $apiCallURL .= "&region=uk";
     $apiCallURL .= "&key=AIzaSyAVnFbRJ8vu79913sZlOeacRJn9bNEXpoQ";
