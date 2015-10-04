@@ -76,7 +76,7 @@ function getPathMsg() {
     echo "\nTime: $duration";
     
     /* Parse the steps */
-    echo strval(count($legs[0]["steps"]);
+    //echo strval(count($legs[0]["steps"]);
     
     /*
     for($i = 0; $i < count(steps); $i++) {
