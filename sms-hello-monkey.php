@@ -8,21 +8,25 @@ include('Services/Twilio.php');
 
 function getPathData() {
     /* Read the contents of the 'Body' field of the Request. */
-   /* $body = $_REQUEST["Body"];
+    $body = $_REQUEST["Body"];
     $city = $_REQUEST["FromCity"];
     $state = $_REQUEST["FromState"];
-    $zip = $REQUEST["FromZip"];
-    $country = $REQUEST["FromCountry"];
-    */
+    $zip = $_REQUEST["FromZip"];
+    $country = $_REQUEST["FromCountry"];
+    $from = $_REQUEST["From"];
+    
+    /*
     $city = "Birmingham";
     $state = "West Midlands";
     $zip = "B297AE";
     $country = "UK";
-    
+    */
+    echo $body;
     echo $city;
     echo $state;
     echo $zip;
     echo $country;
+    echo $from;
     /* Remove formatting from $body until it is just lowercase 
     characters without punctuation or spaces. */
     $body = preg_replace("/[^A-Za-z0-9]/u", " ", $body);
