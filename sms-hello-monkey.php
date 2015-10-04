@@ -75,7 +75,7 @@ function getPathMsg() {
     echo "Distance: $distance";
     echo "\nTime: $duration";
     
-    //$steps = legs[0]["steps"];
+    $steps = legs[0]["steps"];
     
     /*
     for($i = 0; $i < count(steps); $i++) {
