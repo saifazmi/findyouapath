@@ -8,8 +8,16 @@ include('Services/Twilio.php');
 
 function getPathData() {
     /* Read the contents of the 'Body' field of the Request. */
-    $body = $_REQUEST['Body'];
-
+    $body = $_REQUEST["Body"];
+    $city = $_REQUEST["FromCity"];
+    $state = $_REQUEST["FromState"];
+    $zip = $REQUEST["FromZip"];
+    $country = $REQUEST["FromCountry"];
+    
+    echo $city;
+    echo $state;
+    echo $zip;
+    echo $country;
     /* Remove formatting from $body until it is just lowercase 
     characters without punctuation or spaces. */
     $body = preg_replace("/[^A-Za-z0-9]/u", " ", $body);
@@ -26,7 +34,7 @@ function getPathData() {
     );
     $pathdata = json_encode(array("findpath" => $pathdata),  JSON_PRETTY_PRINT | JSON_FORCE_OBJECT);
     
-    return $pathdata;
+    //return $pathdata;
 }
 
 function googleMagic($origin, $destination) {
@@ -67,8 +75,9 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 <Response>
     <Message>
         <?php
+            getPathData();
             //echo strval(getPathData());
-            findYouAPath();
+            //findYouAPath();
         ?>
     </Message>
 </Response>
