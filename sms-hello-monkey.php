@@ -26,10 +26,15 @@ function getPathData() {
     );
     $pathdata = json_encode(array("findpath" => $pathdata),  JSON_PRETTY_PRINT | JSON_FORCE_OBJECT);
     
-    echo $pathdata;
+    return $pathdata;
 }
 
-
+function findPath() {
+    /*  Google path api example 
+        https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=AIzaSyAVnFbRJ8vu79913sZlOeacRJn9bNEXpoQ
+    */
+    
+}
  
 header("content-type: text/xml");
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"; 
@@ -38,7 +43,7 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 <Response>
     <Message>    
     <?php
-        getPathData();
+        echo getPathData();
     ?>        
     </Message>
 </Response>
