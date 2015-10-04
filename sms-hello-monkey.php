@@ -1,28 +1,10 @@
 <?php
-    /* Include twilio-php, the official Twilio PHP Helper Library, 
-    * which can be found at
-    * http://www.twilio.com/docs/libraries
-    */
- 
+
 include('Services/Twilio.php');
 
 function getPathData() {
     /* Read the contents of the 'Body' field of the Request. */
     $body = $_REQUEST["Body"];
-    
-    /*
-    $city = "Birmingham";
-    $state = "West Midlands";
-    $zip = "B297AE";
-    $country = "UK"
-    
-    echo $body;
-    echo $city;
-    echo $state;
-    echo $zip;
-    echo $country;
-    echo $from;
-    */
     
     /* Remove formatting from $body until it is just lowercase 
     characters without punctuation or spaces. */
@@ -45,14 +27,14 @@ function getPathData() {
 function googleMagic($origin, $destination) {
     /* Google Directions API */
     $apiCallURL = "https://maps.googleapis.com/maps/api/directions/json?";
-    $apiCallURL .= "origin=".urlencode($origin);
-    $apiCallURL .= "&destination=".urlencode($destination);
+    //$apiCallURL .= "origin=".urlencode($origin);
+    //$apiCallURL .= "&destination=".urlencode($destination);
     
     //$apiCallURL .= "origin=26+dawlish+road+BHX";
     //$apiCallURL .= "&destination=bull+ring,BHX";
     
-    //$apiCallURL .= "origin=B297AE";
-    //$apiCallURL .= "&destination=B152QX";
+    $apiCallURL .= "origin=B297AE";
+    $apiCallURL .= "&destination=B152QX";
     
     $apiCallURL .= "&mode=walking";
     $apiCallURL .= "&region=uk";
@@ -61,8 +43,8 @@ function googleMagic($origin, $destination) {
     return file_get_contents($apiCallURL);
 }
 
-function getPathMsg() {
-    $pathJSON = googleMagic();
+function printPathMsg($pathJSON) {
+    //$pathJSON = googleMagic();
     //echo $pathJSON;
     $pathJSON = json_decode($pathJSON, true);
     $routes = $pathJSON["routes"];
@@ -80,16 +62,9 @@ function getPathMsg() {
     for($i = 0; $i < count($steps); $i++) {
         
         $step = $steps[$i]["html_instructions"];
-        //echo "\n$step\n";
-        /* remove all unicode tags and extra spaces */
-        //$step = preg_replace("/[\x00-\x08\x0B\x0C\x0E-\x1F\x80-\x9F]/u", "", $step);
         $step = strip_tags($step);
         echo "\n$step\n";
     }
-    
-    /*
-    for removing all the unicode in html instructions
-    $string = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $string); */
 }
 
 function findYouAPath() {
@@ -106,8 +81,7 @@ function findYouAPath() {
     echo "\n";
     echo $destination;
     
-    //googleMagic($origin, $destination);
-    //getPathMsg();
+    printPathMsg(googleMagic($origin, $destination));
 }
 
 header("content-type: text/xml");
