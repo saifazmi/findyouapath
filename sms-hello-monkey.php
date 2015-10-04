@@ -77,6 +77,7 @@ function getPathMsg() {
     
     /* Parse the steps */
     $steps = $legs[0]["steps"];
+    echo count($steps);
     
     /*
     for($i = 0; $i < count(steps); $i++) {
