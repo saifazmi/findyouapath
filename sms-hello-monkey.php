@@ -73,9 +73,15 @@ function getPathMsg() {
     $duration = $legs[0]["duration"]["text"];
     
     echo "\n\n\n";
-    echo $distance;
+    echo "Distance: " + $distance;
     echo "\n";
-    echo $duration;
+    echo "Time: " + $duration;
+    
+    $setps = $legs[0]["steps"];
+    
+    /*
+    for removing all the unicode in html instructions
+    $string = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $string); */
 }
 
 function findYouAPath() {
