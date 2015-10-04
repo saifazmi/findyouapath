@@ -16,6 +16,12 @@ $body = trim($body);
 $pathquery = strtolower($body);
 $pathquery = explode(" to ", $pathquery);
 
+$pathdata = array(
+    'from' => $pathquery[0],
+    'to' => $pathquery[1]
+);
+
+$pathdata = json_encode(array('path' => $pathdata), JSON_FORCE_OBJECT);
 
 header("content-type: text/xml");
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"; 
@@ -24,8 +30,11 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 <Response>
     <Message>    
     <?php 
-        echo $pathquery[0];
-        echo $pathquery[1];
+        $json_output = json_decode($pathdata, true);        
+        foreach ($json_output as $trend)
+        {         
+            echo "{$trend->text}\n"; 
+        } 
     ?>        
     </Message>
 </Response>
