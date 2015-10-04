@@ -73,9 +73,9 @@ function getPathMsg() {
     $duration = $legs[0]["duration"]["text"];
     
     echo "\n\n\n";
-    echo distance;
+    echo $distance;
     echo "\n";
-    echo duration;
+    echo $duration;
 }
 
 function findYouAPath() {
