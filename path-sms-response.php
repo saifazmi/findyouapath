@@ -78,9 +78,9 @@ function findYouAPath() {
     $origin = $findyouapath["from"];
     $destination = $findyouapath["to"];
     
-    echo urlencode($origin);
-    echo urlencode($destination);
-    //printPathMsg(googleMagic($origin, $destination));
+    //echo urlencode($origin);
+    //echo urlencode($destination);
+    printPathMsg(googleMagic($origin, $destination));
 }
 
 header("content-type: text/xml");
