@@ -23,16 +23,17 @@ function getPathData() {
         "from" => $pathquery[0],
         "to" => $pathquery[1]
     );
-    $pathdata = json_encode(array("findpath" => $pathdata),  JSON_PRETTY_PRINT | JSON_FORCE_OBJECT);
+    $pathdata = json_encode(array("findpath" => $pathdata),JSON_FORCE_OBJECT|JSON_PRETTY_PRINT);
     
     return $pathdata;
 }
 
-function googleMagic($origin, $destination) {
+function googleMagic($origin, $destination, $mode) {
     /* Google Directions API */
     $apiCallURL = "https://maps.googleapis.com/maps/api/directions/json?";
     $apiCallURL .= "origin=".urlencode($origin);
     $apiCallURL .= "&destination=".urlencode($destination);
+    $apiCallURL .= "&mode=".urlencode($mode);
     $apiCallURL .= "&mode=walking";
     $apiCallURL .= "&region=uk";
     $apiCallURL .= "&key=AIzaSyAVnFbRJ8vu79913sZlOeacRJn9bNEXpoQ";
