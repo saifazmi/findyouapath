@@ -43,6 +43,7 @@ function googleMagic($origin, $destination) {
 function printPathMsg($pathJSON) {
 
 	//@TODO: try to build a string of the whole msg.
+	//@TODO: take in the mode of travel use the Kyword BY maybe.
 	//@TODO: format the string
 	//@TODO: determine the string length and figure out to send the whole msg.
     $pathJSON = json_decode($pathJSON, true);
