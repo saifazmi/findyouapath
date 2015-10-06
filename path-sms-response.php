@@ -20,8 +20,8 @@ function getPathData() {
     $pathquery = explode(" to ", $pathquery);
     /* Creating a JSON object of path data */
     $pathdata = array(
-        "from" => str_replace(" ","+",$pathquery[0]),
-        "to" => str_replace(" ","+",$pathquery[1])
+        "from" => $pathquery[0],
+        "to" => $pathquery[1]
     );
     $pathdata = json_encode(array("findpath" => $pathdata),  JSON_PRETTY_PRINT | JSON_FORCE_OBJECT);
     
@@ -42,6 +42,9 @@ function googleMagic($origin, $destination) {
 
 function printPathMsg($pathJSON) {
 
+	//@TODO: try to build a string of the whole msg.
+	//@TODO: format the string
+	//@TODO: determine the string length and figure out to send the whole msg.
     $pathJSON = json_decode($pathJSON, true);
     $routes = $pathJSON["routes"];
     $legs = $routes[0]["legs"];
@@ -75,7 +78,9 @@ function findYouAPath() {
     $origin = $findyouapath["from"];
     $destination = $findyouapath["to"];
     
-    printPathMsg(googleMagic($origin, $destination));
+    echo urlencode($origin);
+    echo urlencode($destination);
+    //printPathMsg(googleMagic($origin, $destination));
 }
 
 header("content-type: text/xml");
