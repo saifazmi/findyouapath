@@ -33,7 +33,7 @@ function googleMagic($origin, $destination, $mode) {
     $apiCallURL = "https://maps.googleapis.com/maps/api/directions/json?";
     $apiCallURL .= "origin=".urlencode($origin);
     $apiCallURL .= "&destination=".urlencode($destination);
-    $apiCallURL .= "&mode=".urlencode($mode);
+    //$apiCallURL .= "&mode=".urlencode($mode);
     $apiCallURL .= "&mode=walking";
     $apiCallURL .= "&region=uk";
     $apiCallURL .= "&key=AIzaSyAVnFbRJ8vu79913sZlOeacRJn9bNEXpoQ";
